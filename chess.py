@@ -26,9 +26,14 @@ class Pawn(Piece):
         y = input('')
     
 
+for i in range(8):
+    print(i)
+    board[6, i] = Pawn('White', [i, 0])
+    board[1, i] = Pawn('Black', [i, 0])
 
-board[2, 3] = Pawn('White', [1, 0])
+print('hi')
 
+print(range(1, 5))
 
 print(board)
 
