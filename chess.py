@@ -46,20 +46,22 @@ class Knight(Piece):
         x = input('')
         y = input('')
 
+class Bishop(Piece):
 
+    def movement(self, x, y):
+        x = input('')
+        y = input('')
 
 for i in range(8):
     board[6, i] = Pawn('White', [i, 0])
     board[1, i] = Pawn('Black', [i, 0])
 
-for i in (0, 7):
-    board[0, i] = Rook('Black', [0, i])
-    board[7, i] = Rook('White', [7, i])
+back_rank = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
 
-for i in (1, 6):
-    board[0, i] = Knight('Black', [0, i])
-    board[7, i] = Knight('White', [7, i])
-
+# 2. Проходимося по цьому списку один раз
+for col, PieceClass in enumerate(back_rank):
+    board[0, col] = PieceClass('Black', [0, col])
+    board[7, col] = PieceClass('White', [7, col])
 
 print(board)
 
