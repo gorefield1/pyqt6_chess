@@ -5,7 +5,8 @@ from PyQt6.QtWidgets import QApplication, QWidget
 
 board = np.full((8, 8), None, dtype=object)
 
-print(board)
+
+a = None
 
 
 class Piece:
@@ -13,8 +14,23 @@ class Piece:
     def __init__(self, color, position):
         self.color = color 
         self.position = position
+    
+    def movement(self, x, y):
+        pass
 
-#
+
+class Pawn(Piece):
+
+    def movement(self, x, y):
+        x = input('')
+        y = input('')
+    
+
+
+board[2, 3] = Pawn('White', [1, 0])
+
+
+print(board)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
